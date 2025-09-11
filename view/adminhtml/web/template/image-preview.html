@@ -1,0 +1,33 @@
+<!--
+/**
+ * Copyright © Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<div class="file-uploader-summary">
+    <div class="file-uploader-preview">
+        <a class="preview-link"
+           css="'preview-document'"
+           attr="href: $parent.getFilePreview($file), title: $file.name" target="_blank">
+        </a>
+
+        <div class="actions">
+            <button
+                type="button"
+                class="action-remove"
+                data-role="delete-button"
+                attr="title: $t('Delete image')"
+                click="$parent.removeFile.bind($parent, $file)">
+                <span translate="'Delete image'"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="file-uploader-filename" text="$file.name"></div>
+
+    <div class="file-uploader-meta">
+        <text args="$parent.formatSize($file.size)"></text>
+    </div>
+</div>
