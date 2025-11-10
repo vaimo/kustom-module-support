@@ -3,13 +3,13 @@
     "description": "Kustom Support Magento 2 Extension",
     "type": "magento2-module",
     "license": "Apache-2.0",
-    "version": "3.0.14",
+    "version": "3.0.15",
     "scripts": {
         "test": "phpunit",
         "cov": "phpunit --coverage-html coverage"
     },
     "require": {
-        "vaimo/kustom-module-base": "11.0.12",
+        "vaimo/kustom-module-base": "11.0.*",
         "magento/framework": "^103",
         "php": "~7.4.0||~8.1.0||~8.2.0||~8.3.0||~8.4.0"
     },
