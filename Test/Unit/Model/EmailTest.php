@@ -13,6 +13,7 @@ use Magento\Email\Model\Transport;
 use Magento\Store\Model\Store;
 use Klarna\Base\Test\Unit\Mock\TestCase;
 use Magento\Framework\Filesystem\Directory\Read;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @coversDefaultClass \Klarna\Support\Model\Email
@@ -145,6 +146,7 @@ class EmailTest extends TestCase
         $this->email->send($this->contentData);
     }
 
+    #[DataProvider('modulesToIgnoreDataProvider')]
     /**
      * @dataProvider modulesToIgnoreDataProvider
      * @covers ::getModulesToIgnore()
@@ -156,7 +158,7 @@ class EmailTest extends TestCase
         $this->assertEquals($expectedModulesToIgnore, $modulesToIgnore);
     }
 
-    public function modulesToIgnoreDataProvider(): array
+    public static function modulesToIgnoreDataProvider(): array
     {
         return [
             'ignore_klarna_kp' => [

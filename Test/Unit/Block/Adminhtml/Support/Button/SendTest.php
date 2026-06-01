@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright © Klarna Bank AB (publ)
  *
@@ -9,7 +10,6 @@
 namespace Klarna\Support\Test\Unit\Block\Adminhtml\Support\Button;
 
 use Klarna\Support\Block\Adminhtml\Support\Button\Send;
-use Klarna\Base\Test\Unit\Mock\MockFactory;
 use Klarna\Base\Test\Unit\Mock\TestObjectFactory;
 use PHPUnit\Framework\TestCase;
 
@@ -33,8 +33,7 @@ class SendTest extends TestCase
 
     protected function setUp(): void
     {
-        $mockFactory = new MockFactory($this);
-        $objectFactory = new TestObjectFactory($mockFactory);
+        $objectFactory = new TestObjectFactory('');
         $this->send = $objectFactory->create(Send::class);
     }
 }

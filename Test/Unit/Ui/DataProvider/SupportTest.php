@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright © Klarna Bank AB (publ)
  *
@@ -81,7 +82,7 @@ class SupportTest extends TestCase
     protected function setUp(): void
     {
         $this->mockFactory     = new MockFactory($this);
-        $objectFactory         = new TestObjectFactory($this->mockFactory);
+        $objectFactory         = new TestObjectFactory('');
         $this->user            = $this->mockFactory->create(User::class);
         $this->auth            = $this->mockFactory->create(Auth::class);
         $this->dataProvider    = $this->createSubject();
